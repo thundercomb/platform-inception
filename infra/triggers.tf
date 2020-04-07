@@ -10,6 +10,7 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
   }
 
   substitutions = {
+    _ORG_ID            = var.org_id
     _ANALYTICS_PROJECT = var.analytics_project
     _REGION            = var.region
     _BILLING_ACCOUNT   = var.billing_account
@@ -19,6 +20,8 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
   description = "BUILD: Analytics Infra"
   filename    = "cloudbuild.yaml"
   included_files = [
-    "*"
+    "**/*"
   ]
+
+  depends_on = [google_project_service.inception]
 }

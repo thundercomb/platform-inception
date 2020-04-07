@@ -1,8 +1,13 @@
-resource "google_organization_iam_binding" "cloud_build_storage_admin" {
+resource "google_organization_iam_member" "cloud_build" {
   org_id = var.org_id
-  role   = "roles/storage.admin"
+  for_each = toset([
+    "roles/storage.admin",
+    "roles/billing.user",
+    "roles/cloudbuild.builds.editor",
+    "roles/resourcemanager.projectCreator"
+  ])
 
-  members = [
-    "serviceAccount:${var.inception_project_number}@cloudbuild.gserviceaccount.com"
-  ]
+  role = each.key
+
+  member = "serviceAccount:${var.inception_project_number}@cloudbuild.gserviceaccount.com"
 }

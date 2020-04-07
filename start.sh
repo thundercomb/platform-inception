@@ -28,17 +28,6 @@ if [ $? -ne 0 ]; then
   gsutil mb -l ${REGION} -p ${INCEPTION_PROJECT} gs://${STATE_BUCKET}/
 fi
 
-echo "Checking if services are enabled ..."
-for service in cloudbuild cloudbilling; do
-  echo "Checking $service service ..."
-  gcloud services list | grep -q ^"${service}.googleapis.com"
-  if [ $? -ne 0 ]; then
-    echo "$service service isn't enabled."
-    echo "Enabling $service service ..."
-    gcloud services enable ${service}.googleapis.com
-  fi
-done
-
 # Create infrastructure
 
 source _tf_vars.sh
