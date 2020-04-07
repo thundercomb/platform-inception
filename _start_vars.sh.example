@@ -1,0 +1,7 @@
+# Used in start.sh
+INCEPTION_PROJECT="platform-orchestration"
+STATE_BUCKET="${INCEPTION_PROJECT}-terraform-state"
+REGION="europe-west2"
+BILLING_ACCOUNT="<billing_account>"
+
+export INCEPTION_PROJECT STATE_BUCKET REGION BILLING_ACCOUNT

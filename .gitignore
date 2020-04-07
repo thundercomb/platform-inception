@@ -137,4 +137,5 @@ dmypy.json
 **/*.tfstate
 
 # repo
-_vars.sh
+_start_vars.sh
+_tf_vars.sh

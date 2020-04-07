@@ -2,7 +2,7 @@
 
 # Set variables
 
-source _vars.sh
+source _start_vars.sh
 
 # Prepare the environment
 
@@ -28,15 +28,20 @@ if [ $? -ne 0 ]; then
   gsutil mb -l ${REGION} -p ${INCEPTION_PROJECT} gs://${STATE_BUCKET}/
 fi
 
-echo "Checking if cloud build service is enabled ..."
-gcloud services list | grep -q ^cloudbuild.googleapis.com
-if [ $? -ne 0 ]; then
-  echo "Cloud build service isn't enabled."
-  echo "Enabling cloud build service ..."
-  gcloud services enable cloudbuild.googleapis.com
-fi
+echo "Checking if services are enabled ..."
+for service in cloudbuild cloudbilling; do
+  echo "Checking $service service ..."
+  gcloud services list | grep -q ^"${service}.googleapis.com"
+  if [ $? -ne 0 ]; then
+    echo "$service service isn't enabled."
+    echo "Enabling $service service ..."
+    gcloud services enable ${service}.googleapis.com
+  fi
+done
 
 # Create infrastructure
+
+source _tf_vars.sh
 
 cd infra
 
