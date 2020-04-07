@@ -1,0 +1,7 @@
+INCEPTION_PROJECT="platform-orchestration"
+TF_VAR_project="${INCEPTION_PROJECT}"
+STATE_BUCKET="${INCEPTION_PROJECT}-terraform-state"
+REGION="europe-west2"
+BILLING_ACCOUNT="<billing_account>"
+
+export INCEPTION_PROJECT TF_VAR_project STATE_BUCKET REGION BILLING_ACCOUNT

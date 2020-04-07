@@ -127,3 +127,14 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Mac
+**/.DS_Store
+
+# terraform
+**/*terraform.tfvars
+**/.terraform
+**/*.tfstate
+
+# repo
+_vars.sh
