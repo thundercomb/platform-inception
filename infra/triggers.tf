@@ -9,6 +9,13 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
     }
   }
 
+  substitutions = {
+    _ANALYTICS_PROJECT = var.analytics_project
+    _REGION            = var.region
+    _BILLING_ACCOUNT   = var.billing_account
+    _OWNER_EMAIL       = var.owner_email
+  }
+
   description = "BUILD: Analytics Infra"
   filename    = "cloudbuild.yaml"
   included_files = [
