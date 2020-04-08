@@ -5,5 +5,3 @@ variable "region" {}
 variable "billing_account" {}
 variable "owner" {}
 variable "owner_email" {}
-variable "oauth_client_id" {}
-variable "oauth_client_secret" {}
