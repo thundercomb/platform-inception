@@ -8,9 +8,10 @@ TF_VAR_billing_account="${BILLING_ACCOUNT}"
 TF_VAR_owner="<github repos account eg. thundercomb>"
 TF_VAR_owner_email="<owner email>"
 TF_VAR_kubeflow_host="<kubeflow host>"
+TF_VAR_inception_ip=$(curl ifconfig.me)
 
 # Note: kubeflow host will only become available after kubeflow has been installed
 #       come back here, add the information, and rerun:
 #       platform-inception, analytics-infra, and then training pipelines
 
-export TF_VAR_org_id GOOGLE_PROJECT TF_VAR_inception_project_number TF_VAR_analytics_project TF_VAR_region TF_VAR_billing_account TF_VAR_owner TF_VAR_owner_email TF_VAR_kubeflow_host
+export TF_VAR_org_id GOOGLE_PROJECT TF_VAR_inception_project_number TF_VAR_analytics_project TF_VAR_region TF_VAR_billing_account TF_VAR_owner TF_VAR_owner_email TF_VAR_kubeflow_host TF_VAR_inception_ip

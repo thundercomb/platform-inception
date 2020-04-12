@@ -4,7 +4,8 @@ resource "google_project_service" "inception" {
     "cloudbuild.googleapis.com",
     "cloudbilling.googleapis.com",
     "cloudresourcemanager.googleapis.com",
-    "container.googleapis.com"
+    "container.googleapis.com",
+    "accesscontextmanager.googleapis.com"
   ])
   service = each.key
 }

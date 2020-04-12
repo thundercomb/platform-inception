@@ -17,6 +17,7 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
     _OWNER             = var.owner
     _OWNER_EMAIL       = var.owner_email
     _KUBEFLOW_HOST     = var.kubeflow_host
+    _INCEPTION_IP      = var.inception_ip
   }
 
   description = "BUILD: Analytics Infra"

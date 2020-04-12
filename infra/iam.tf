@@ -4,7 +4,8 @@ resource "google_organization_iam_member" "cloud_build" {
     "roles/storage.admin",
     "roles/billing.user",
     "roles/cloudbuild.builds.editor",
-    "roles/resourcemanager.projectCreator"
+    "roles/resourcemanager.projectCreator",
+    "roles/accesscontextmanager.policyAdmin"
   ])
 
   role = each.key
