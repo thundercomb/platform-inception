@@ -14,4 +14,4 @@ TF_VAR_inception_ip=$(curl ifconfig.me)
 #       come back here, add the information, and rerun:
 #       platform-inception, analytics-infra, and then training pipelines
 
-export TF_VAR_org_id GOOGLE_PROJECT TF_VAR_orchestration_project_id TF_VAR_ORCHESTRATION_PROJECT_number TF_VAR_analytics_project TF_VAR_region TF_VAR_billing_account TF_VAR_owner TF_VAR_owner_email TF_VAR_kubeflow_host TF_VAR_inception_ip
+export TF_VAR_org_id GOOGLE_PROJECT TF_VAR_ORCHESTRATION_PROJECT_number TF_VAR_analytics_project TF_VAR_region TF_VAR_billing_account TF_VAR_owner TF_VAR_owner_email TF_VAR_kubeflow_host TF_VAR_inception_ip

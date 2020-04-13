@@ -11,7 +11,6 @@ resource "google_cloudbuild_trigger" "analytics_infra" {
 
   substitutions = {
     _ORG_ID                       = var.org_id
-    _ORCHESTRATION_PROJECT_ID     = var.orchestration_project_id
     _ORCHESTRATION_PROJECT_NUMBER = var.orchestration_project_number
     _ANALYTICS_PROJECT            = var.analytics_project
     _REGION                       = var.region
