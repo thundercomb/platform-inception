@@ -1,5 +1,6 @@
 variable "org_id" {}
-variable "inception_project_number" {}
+variable "orchestration_project_number" {}
+variable "orchestration_project_id" {}
 variable "analytics_project" {}
 variable "region" {}
 variable "billing_account" {}
